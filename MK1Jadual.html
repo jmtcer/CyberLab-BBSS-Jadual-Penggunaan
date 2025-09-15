@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadual Penggunaan Makmal Komputer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        thead th {
+            background-color: #4CAF50; /* Warna Hijau */
+            color: white;
+            font-weight: bold;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        .slot-terbuka {
+            background-color: #fffbe6; /* Warna Kuning Pudar */
+            font-weight: bold;
+            color: #8a6d3b;
+        }
+        .rehat {
+            background-color: #e7e7e7;
+            text-align: center;
+            font-style: italic;
+        }
+        .penyelenggaraan {
+            background-color: #f2dede; /* Warna Merah Pudar */
+            font-weight: bold;
+            color: #a94442;
+        }
+        /* Untuk paparan di telefon */
+        @media (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                margin-bottom: 15px;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #ddd;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+            td:before {
+                position: absolute;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+                content: attr(data-label);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jadual Penggunaan Makmal Komputer</h1>
+    <h2>SMK BANDAR BARU SRI SENDAYAN NEA4120</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Hari</th>
+                <th>Masa</th>
+                <th>Kelas / Guru</th>
+                <th>Subjek</th>
+                <th>Catatan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Hari"><b>Isnin</b></td>
+                <td data-label="Masa">9:00 - 10:00</td>
+                <td data-label="Kelas / Guru">Tingkatan 3A / Cikgu Jamaliah</td>
+                <td data-label="Subjek">Reka Bentuk Teknologi</td>
+                <td data-label="Catatan">Jadual Tetap</td>
+            </tr>
+            <tr>
+                <td data-label="Hari"></td>
+                <td data-label="Masa">10:20 - 11:30</td>
+                <td data-label="Kelas / Guru">Tingkatan 3B / Cikgu Aini</td>
+                <td data-label="Subjek">Reka Bentuk & Teknologi</td>
+                <td data-label="Catatan">Jadual Tetap</td>
+            </tr>
+            <tr class="rehat">
+                <td colspan="5">10:20 - 10:50 | REHAT</td>
+            </tr>
+            <tr>
+                <td data-label="Hari"></td>
+                <td data-label="Masa">11:00 - 12:30</td>
+                <td data-label="Kelas / Guru" class="slot-terbuka">SLOT TEMPAHAN TERBUKA</td>
+                <td data-label="Subjek">(Mengikut tempahan)</td>
+                <td data-label="Catatan">Hubungi Guru Penyelaras ICT</td>
+            </tr>
+            <tr>
+                <td data-label="Hari"><b>Selasa</b></td>
+                <td data-label="Masa">8:00 - 9:30</td>
+                <td data-label="Kelas / Guru">Tingkatan 3D / Cikgu Rafidah</td>
+                <td data-label="Subjek">Penggiliran Subjek (Geografi)</td>
+                <td data-label="Catatan">Minggu 1 & 3</td>
+            </tr>
+             <tr class="rehat">
+                <td colspan="5">10:30 - 11:00 | REHAT</td>
+            </tr>
+            <tr>
+                <td data-label="Hari"><b>Rabu</b></td>
+                <td data-label="Masa">11:00 - 12:30</td>
+                <td data-label="Kelas / Guru" class="slot-terbuka">SLOT TEMPAHAN TERBUKA</td>
+                <td data-label="Subjek">(Mengikut tempahan)</td>
+                <td data-label="Catatan">Hubungi Guru Penyelaras ICT</td>
+            </tr>
+            <tr>
+                <td data-label="Hari"></td>
+                <td data-label="Masa">1:00 - 3:00</td>
+                <td data-label="Kelas / Guru">Kelab STEM / Cikgu Jamaliah</td>
+                <td data-label="Subjek">Aktiviti Ko-kurikulum</td>
+                <td data-label="Catatan">Setiap Rabu</td>
+            </tr>
+            <tr>
+                <td data-label="Hari"><b>Jumaat</b></td>
+                <td data-label="Masa">7:30 - 12:30</td>
+                <td data-label="Kelas / Guru" colspan="3" class="penyelenggaraan" style="text-align:center;">PENYELENGGARAAN & KEMAS KINI MAKMAL</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
